@@ -11,6 +11,8 @@ body {
     background: #121212; /* Black background */
     color: #fdf5e6; /* Cream text */
     text-align: center;
+    overflow-x: hidden;
+    position: relative;
 }
 
 .hero {
@@ -33,7 +35,6 @@ body {
     width: 100%; height: 100%;
     background-color: rgba(253, 245, 230, 0.6); /* Cream overlay */
     z-index: 1;
-    border-radius: 0;
 }
 
 .hero h1, .hero p {
@@ -42,35 +43,25 @@ body {
     margin: 10px 0;
 }
 
-.hero h1 {
-    font-size: 60px;
-}
-
-.hero p {
-    font-size: 22px;
-}
+.hero h1 { font-size: 60px; }
+.hero p { font-size: 22px; }
 
 .section {
     padding: 50px 20px;
     max-width: 800px;
     margin: 30px auto;
-    background: #1c1c1c; /* Dark section background */
+    background: #1c1c1c;
     border-radius: 12px;
+    position: relative;
+    overflow: hidden;
 }
 
-h2 {
-    color: #9caf88; /* Sage headings */
-}
-
-.countdown {
-    font-size: 24px;
-    margin-top: 20px;
-    color: #556b2f; /* Olive countdown text */
-}
+h2 { color: #9caf88; }
+.countdown { font-size: 24px; margin-top: 20px; color: #556b2f; }
 
 button {
-    background: #9caf88; /* Sage buttons */
-    color: #fdf5e6; /* Cream text on buttons */
+    background: #9caf88;
+    color: #fdf5e6;
     border: none;
     padding: 12px 25px;
     font-size: 16px;
@@ -81,14 +72,14 @@ button {
 }
 
 button:hover {
-    background: #fdf5e6; /* Cream hover */
-    color: #121212; /* Black text on hover */
+    background: #fdf5e6;
+    color: #121212;
     box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
 
 footer {
-    background: #121212; /* Black footer */
-    color: #fdf5e6; /* Cream text */
+    background: #121212;
+    color: #fdf5e6;
     padding: 20px;
     font-size: 14px;
 }
@@ -98,6 +89,25 @@ img {
     height: auto;
     border-radius: 10px;
     margin-bottom: 20px;
+}
+
+/* Sparkles */
+@keyframes sparkle {
+    0% { transform: translateY(0) scale(0.5); opacity: 0; }
+    50% { opacity: 1; }
+    100% { transform: translateY(-1000px) scale(1); opacity: 0; }
+}
+
+.sparkle {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background: #fdf5e6;
+    border-radius: 50%;
+    top: 100%;
+    left: 50%;
+    opacity: 0;
+    animation: sparkle 5s linear infinite;
 }
 </style>
 </head>
@@ -109,6 +119,8 @@ img {
     <p>Join Us In Celebration</p>
     <p>May 9 • 12:30 PM</p>
     <div class="countdown" id="countdown"></div>
+    <!-- Sparkles -->
+    <div id="sparkles"></div>
 </div>
 
 <div class="section">
@@ -151,19 +163,30 @@ img {
 </footer>
 
 <script>
+// Countdown
 var countDownDate = new Date("May 9, 2026 12:30:00").getTime();
-
 var x = setInterval(function() {
     var now = new Date().getTime();
     var distance = countDownDate - now;
-
     var days = Math.floor(distance / (1000 * 60 * 60 * 24));
     var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-
     document.getElementById("countdown").innerHTML =
     days + " Days " + hours + " Hours " + minutes + " Minutes Until We Celebrate!";
 }, 1000);
+
+// Sparkles
+const sparkleContainer = document.getElementById('sparkles');
+for(let i=0; i<100; i++){
+    let s = document.createElement('div');
+    s.className = 'sparkle';
+    s.style.left = Math.random()*100 + '%';
+    s.style.animationDuration = 3 + Math.random()*5 + 's';
+    s.style.width = 2 + Math.random()*3 + 'px';
+    s.style.height = s.style.width;
+    s.style.top = 100 + Math.random()*200 + 'px';
+    sparkleContainer.appendChild(s);
+}
 </script>
 
 </body>
