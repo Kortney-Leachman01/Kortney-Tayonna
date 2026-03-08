@@ -1,141 +1,228 @@
+<!DOCTYPE html>
+<html>
 <head>
-  <title>Kortney & Tayonna | May 9</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
-  
-  <style>
-  body {
-      font-family: 'Dancing Script', cursive;
-      margin: 0;
-      background: #ffffff; /* default to white */
-      color: #121212; /* default text black */
-      text-align: center;
-      overflow-x: hidden;
-      position: relative;
-  }
+<title>Kortney & Tayonna | May 9</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-  /* Hero Section */
-  .hero {
-      position: relative;
-      background-image: url('https://www.travelandleisure.com/thmb/c2_vb-0iQLWz0DAUF0eqcoxVezw=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/header-calusa-beach-FLKEYBEACH0622-5150350aa08549cbb5a814ef469873c1.jpg');
-      background-size: cover;
-      background-position: center;
-      color: #121212;
-      padding: 150px 20px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-  }
+<!-- Google Fonts: Cursive -->
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
 
-  .hero::before {
-      content: "";
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background-color: rgba(255, 255, 255, 0.7); /* white overlay */
-      z-index: 1;
-  }
+<style>
+/* Global Styles */
+body {
+    font-family: 'Dancing Script', cursive;
+    margin: 0;
+    color: #121212;
+    text-align: center;
+    overflow-x: hidden;
+    position: relative;
+    font-size: 22px;
 
-  .hero h1, .hero p {
-      position: relative;
-      z-index: 2;
-      margin: 10px 0;
-  }
+    /* Wavy animated background */
+    background: linear-gradient(120deg, #ffffff 25%, #9caf88 25%, #9caf88 50%, #f5f5f5 50%, #f5f5f5 75%, #ffffff 75%);
+    background-size: 200% 200%;
+    animation: waveBG 20s linear infinite;
+}
 
-  /* Sections with alternating backgrounds */
-  .section:nth-child(odd) {
-      background: #ffffff; /* white */
-      color: #121212; /* black text */
-  }
+@keyframes waveBG {
+    0% { background-position: 0% 0%; }
+    50% { background-position: 100% 100%; }
+    100% { background-position: 0% 0%; }
+}
 
-  .section:nth-child(even) {
-      background: #1c1c1c; /* black/dark */
-      color: #fdf5e6; /* cream text */
-  }
+/* Hero Section */
+.hero {
+    position: relative;
+    padding: 150px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background: rgba(255,255,255,0.3);
+    border-radius: 12px;
+    font-family: 'Dancing Script', cursive;
+}
 
-  .section:nth-child(3n) {
-      background: #9caf88; /* sage */
-      color: #121212; /* black text for readability */
-  }
+.hero h1, .hero p, .countdown {
+    position: relative;
+    z-index: 2;
+    font-family: 'Dancing Script', cursive; /* make all hero text cursive */
+}
 
-  .section {
-      padding: 50px 20px;
-      max-width: 800px;
-      margin: 30px auto;
-      border-radius: 12px;
-      position: relative;
-      overflow: hidden;
-  }
+/* Section Styles */
+.section {
+    padding: 50px 20px;
+    max-width: 800px;
+    margin: 30px auto;
+    border-radius: 12px;
+    position: relative;
+    background: rgba(255,255,255,0.6);
+    backdrop-filter: blur(5px);
+    color: #121212;
+    font-family: 'Dancing Script', cursive;
+}
 
-  h2 { 
-      font-weight: 700;
-      font-size: 2em;
-  }
+/* Headings */
+h2 { 
+    font-weight: 700; 
+    font-size: 2.5em; 
+    text-decoration: underline; 
+    font-family: 'Dancing Script', cursive;
+}
 
-  .countdown { 
-      font-size: 24px; 
-      margin-top: 20px; 
-      color: #9caf88; 
-  }
+/* Bolded info underlined */
+.section b {
+    text-decoration: underline;
+    font-size: 1.2em;
+}
 
-  button {
-      background: #9caf88; /* sage */
-      color: #121212;
-      border: none;
-      padding: 12px 25px;
-      font-size: 16px;
-      border-radius: 6px;
-      cursor: pointer;
-      margin-top: 10px;
-      transition: all 0.3s ease;
-      font-family: 'Dancing Script', cursive;
-  }
+/* Buttons */
+button {
+    background: #9caf88;
+    color: #121212;
+    border: none;
+    padding: 15px 30px;
+    font-size: 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: all 0.3s ease;
+    font-family: 'Dancing Script', cursive;
+}
 
-  button:hover {
-      background: #121212; /* black hover */
-      color: #fdf5e6; /* cream text */
-      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-  }
+button:hover {
+    background: #121212;
+    color: #fdf5e6;
+}
 
-  footer {
-      background: #121212;
-      color: #fdf5e6;
-      padding: 20px;
-      font-size: 14px;
-  }
+/* Countdown */
+.countdown { font-size: 28px; margin-top: 20px; color: #121212; font-family: 'Dancing Script', cursive; }
 
-  img { width: 100%; height: auto; border-radius: 10px; margin-bottom: 20px; }
+/* Footer */
+footer {
+    background: rgba(18,18,18,0.7);
+    color: #fdf5e6;
+    padding: 20px;
+    font-size: 18px;
+    backdrop-filter: blur(5px);
+    font-family: 'Dancing Script', cursive;
+}
 
-  /* Sparkles */
-  @keyframes sparkle {
-      0% { transform: translateY(0) scale(0.5); opacity: 0; }
-      50% { opacity: 1; }
-      100% { transform: translateY(-1000px) scale(1); opacity: 0; }
-  }
-  .sparkle {
-      position: absolute;
-      width: 3px;
-      height: 3px;
-      background: #121212;
-      border-radius: 50%;
-      top: 100%;
-      left: 50%;
-      opacity: 0;
-      animation: sparkle 5s linear infinite;
-  }
+/* Animations */
+.fade-in { opacity: 0; animation: fadeIn 2s forwards; }
+@keyframes fadeIn { to { opacity: 1; } }
 
-  /* Animations for text */
-  .fade-in { opacity: 0; animation: fadeIn 2s forwards; }
-  @keyframes fadeIn { to { opacity: 1; } }
+.slide-up { opacity: 0; transform: translateY(50px); animation: slideUp 1.5s forwards; }
+@keyframes slideUp { to { opacity: 1; transform: translateY(0); } }
 
-  .slide-up { opacity: 0; transform: translateY(50px); animation: slideUp 1.5s forwards; }
-  @keyframes slideUp { to { opacity: 1; transform: translateY(0); } }
+.zoom-in { opacity: 0; transform: scale(0.8); animation: zoomIn 1.5s forwards; }
+@keyframes zoomIn { to { opacity: 1; transform: scale(1); } }
 
-  .zoom-in { opacity: 0; transform: scale(0.8); animation: zoomIn 1.5s forwards; }
-  @keyframes zoomIn { to { opacity: 1; transform: scale(1); } }
-
-  </style>
+/* Sparkles */
+@keyframes sparkle { 0% { transform: translateY(0) scale(0.5); opacity: 0; } 50% { opacity: 1; } 100% { transform: translateY(-2000px) scale(1); opacity: 0; } }
+.sparkle { 
+    position: absolute; 
+    width: 3px; 
+    height: 3px; 
+    background: #121212; 
+    border-radius: 50%; 
+    opacity: 0; 
+    animation: sparkle 5s linear infinite; 
+}
+</style>
 </head>
+
+<body>
+
+<!-- Sparkle Container -->
+<div id="sparkles"></div>
+
+<!-- Hero Section -->
+<div class="hero">
+    <h1 class="fade-in">Kortney & Tayonna</h1>
+    <p class="slide-up">Join Us In Celebration</p>
+    <p class="zoom-in">May 9 • 12:30 PM</p>
+    <div class="countdown" id="countdown"></div>
+</div>
+
+<!-- Welcome Section -->
+<div class="section">
+    <h2 class="fade-in">Welcome</h2>
+    <p class="slide-up">We are excited to celebrate with our family and friends. Thank you for being part of our journey.</p>
+</div>
+
+<!-- Event Details Section -->
+<div class="section">
+    <h2 class="fade-in">Event Details</h2>
+    <p class="slide-up"><b>Date:</b> May 9</p>
+    <p class="slide-up"><b>Time:</b> 12:30 PM</p>
+    <p class="slide-up"><b>Location:</b> To Be Announced</p>
+</div>
+
+<!-- Registry Section -->
+<div class="section">
+    <h2 class="fade-in">Registry</h2>
+    <p class="slide-up">Your presence is the greatest gift. If you'd like to give a gift, you can visit our registry below.</p>
+    <button onclick="window.location.href='https://www.amazon.com/wedding/guest-view/2H5H744HL4MRF';">Visit Registry</button>
+</div>
+
+<!-- Honeymoon Fund Section -->
+<div class="section">
+    <h2 class="fade-in">Honeymoon Fund</h2>
+    <p class="slide-up">
+        Your love and support mean the world to us! If you’d like to contribute to our honeymoon fund, you can use the options below:
+    </p>
+    <p class="slide-up">
+        <b>Cash App:</b> $Kortney1220<br>
+        <b>Zelle:</b> 3177462341
+    </p>
+    <button onclick="window.location.href='https://cash.app/$Kortney1220';">Send via Cash App</button>
+    <button onclick="window.location.href='mailto:3177462341@yourbank.com';">Send via Zelle</button>
+</div>
+
+<!-- RSVP Section -->
+<div class="section">
+    <h2 class="fade-in">RSVP</h2>
+    <p class="slide-up">Please let us know if you will be attending.</p>
+    <button onclick="window.location.href='https://forms.gle/your-google-form-link';">RSVP</button>
+</div>
+
+<footer>
+    Kortney & Tayonna • May 9
+</footer>
+
+<script>
+// Countdown Timer
+var countDownDate = new Date("May 9, 2026 12:30:00").getTime();
+var x = setInterval(function() {
+    var now = new Date().getTime();
+    var distance = countDownDate - now;
+    if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("countdown").innerHTML = "The Celebration Has Begun!";
+        return;
+    }
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    document.getElementById("countdown").innerHTML =
+    days + " Days " + hours + " Hours " + minutes + " Minutes Until We Celebrate!";
+}, 1000);
+
+// Sparkles throughout the page
+const sparkleContainer = document.getElementById('sparkles');
+for(let i=0; i<150; i++){ 
+    let s = document.createElement('div');
+    s.className = 'sparkle';
+    s.style.left = Math.random()*100 + '%';
+    s.style.top = Math.random()*100 + '%';
+    s.style.animationDuration = 3 + Math.random()*5 + 's';
+    s.style.width = 2 + Math.random()*4 + 'px';
+    s.style.height = s.style.width;
+    sparkleContainer.appendChild(s);
+}
+</script>
+
+</body>
+</html>
