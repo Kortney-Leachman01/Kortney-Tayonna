@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
+/* Body and general */
 body {
     font-family: 'Georgia', serif;
     margin: 0;
@@ -15,6 +16,7 @@ body {
     position: relative;
 }
 
+/* Hero section */
 .hero {
     position: relative;
     background-image: url('https://www.travelandleisure.com/thmb/c2_vb-0iQLWz0DAUF0eqcoxVezw=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/header-calusa-beach-FLKEYBEACH0622-5150350aa08549cbb5a814ef469873c1.jpg');
@@ -43,25 +45,24 @@ body {
     margin: 10px 0;
 }
 
-.hero h1 { font-size: 60px; }
-.hero p { font-size: 22px; }
-
+/* Sections */
 .section {
     padding: 50px 20px;
     max-width: 800px;
     margin: 30px auto;
-    background: #1c1c1c;
+    background: #1c1c1c; /* Darker section background */
     border-radius: 12px;
     position: relative;
     overflow: hidden;
 }
 
-h2 { color: #9caf88; }
-.countdown { font-size: 24px; margin-top: 20px; color: #556b2f; }
+h2 { color: #9caf88; } /* Sage headings */
+.countdown { font-size: 24px; margin-top: 20px; color: #9caf88; } /* Sage countdown */
 
+/* Buttons */
 button {
-    background: #9caf88;
-    color: #fdf5e6;
+    background: #9caf88; /* Sage */
+    color: #fdf5e6; /* Cream text */
     border: none;
     padding: 12px 25px;
     font-size: 16px;
@@ -72,24 +73,21 @@ button {
 }
 
 button:hover {
-    background: #fdf5e6;
-    color: #121212;
+    background: #fdf5e6; /* Cream hover */
+    color: #121212; /* Black text */
     box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
 
+/* Footer */
 footer {
     background: #121212;
-    color: #fdf5e6;
+    color: #fdf5e6; /* Cream text */
     padding: 20px;
     font-size: 14px;
 }
 
-img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    margin-bottom: 20px;
-}
+/* Images */
+img { width: 100%; height: auto; border-radius: 10px; margin-bottom: 20px; }
 
 /* Sparkles */
 @keyframes sparkle {
@@ -97,7 +95,6 @@ img {
     50% { opacity: 1; }
     100% { transform: translateY(-1000px) scale(1); opacity: 0; }
 }
-
 .sparkle {
     position: absolute;
     width: 3px;
@@ -109,52 +106,67 @@ img {
     opacity: 0;
     animation: sparkle 5s linear infinite;
 }
+
+/* Animations for text */
+.fade-in { opacity: 0; animation: fadeIn 2s forwards; }
+@keyframes fadeIn { to { opacity: 1; } }
+
+.slide-up { opacity: 0; transform: translateY(50px); animation: slideUp 1.5s forwards; }
+@keyframes slideUp { to { opacity: 1; transform: translateY(0); } }
+
+.zoom-in { opacity: 0; transform: scale(0.8); animation: zoomIn 1.5s forwards; }
+@keyframes zoomIn { to { opacity: 1; transform: scale(1); } }
 </style>
 </head>
 
 <body>
 
+<!-- Hero Section -->
 <div class="hero">
-    <h1>Kortney & Tayonna</h1>
-    <p>Join Us In Celebration</p>
-    <p>May 9 • 12:30 PM</p>
+    <h1 class="fade-in">Kortney & Tayonna</h1>
+    <p class="slide-up">Join Us In Celebration</p>
+    <p class="zoom-in">May 9 • 12:30 PM</p>
     <div class="countdown" id="countdown"></div>
-    <!-- Sparkles -->
     <div id="sparkles"></div>
 </div>
 
+<!-- Welcome Section -->
 <div class="section">
-    <h2>Welcome</h2>
-    <p>
+    <h2 class="fade-in">Welcome</h2>
+    <p class="slide-up">
         We are so excited to celebrate this special moment with our family and friends.
         Thank you for being part of our journey as we celebrate our love together.
     </p>
 </div>
 
+<!-- Event Details Section -->
 <div class="section">
-    <h2>Event Details</h2>
-    <p><b>Date:</b> May 9</p>
-    <p><b>Time:</b> 12:30 PM</p>
-    <p><b>Location:</b> To Be Announced</p>
+    <h2 class="fade-in">Event Details</h2>
+    <p class="slide-up"><b>Date:</b> May 9</p>
+    <p class="slide-up"><b>Time:</b> 12:30 PM</p>
+    <p class="slide-up"><b>Location:</b> To Be Announced</p>
 </div>
 
+<!-- Registry Section -->
 <div class="section">
-    <h2>Registry</h2>
-    <p>Your presence is the greatest gift. If you'd like to give a gift, you can visit our registry below.</p>
+    <h2 class="fade-in">Registry</h2>
+    <p class="slide-up">Your presence is the greatest gift. If you'd like to give a gift, you can visit our registry below.</p>
     <button onclick="window.location.href='https://www.amazon.com/wedding/guest-view/2H5H744HL4MRF';">Visit Registry</button>
 </div>
 
+<!-- Honeymoon Section -->
 <div class="section">
-    <h2>Honeymoon</h2>
-    <p>
+    <h2 class="fade-in">Honeymoon</h2>
+    <p class="slide-up">
         After our celebration we will be traveling to the beautiful Florida Keys for our honeymoon.
         Thank you for being part of our special journey.
     </p>
 </div>
 
+<!-- RSVP Section -->
 <div class="section">
-    <h2>RSVP</h2>
-    <p>Please let us know if you will be attending.</p>
+    <h2 class="fade-in">RSVP</h2>
+    <p class="slide-up">Please let us know if you will be attending.</p>
     <button onclick="window.location.href='https://forms.gle/your-google-form-link';">RSVP</button>
 </div>
 
@@ -163,7 +175,7 @@ img {
 </footer>
 
 <script>
-// Countdown
+// Countdown Timer
 var countDownDate = new Date("May 9, 2026 12:30:00").getTime();
 var x = setInterval(function() {
     var now = new Date().getTime();
